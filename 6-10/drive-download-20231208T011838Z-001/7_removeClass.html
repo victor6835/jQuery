@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    k rel="stylesheet" href="../style.css">
+    <script src="/js/jquery-3.7.1.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            // $('#search').keyup(function () {
+            //     let name = $(this).val()
+            //     // console.log(name);
+
+            //     $('uoption').removeClass('hiht')
+
+            //     if ($(this).val() != '') {
+            //         $('uoption:contains(${name})').addClass("hiht")
+            //     }
+            // })
+            $('#search').on('input', function () {
+                let name = $(this).val()
+                // console.log(name);
+
+                $('uoption').removeClass('hiht')
+
+                if ($(this).val() != '') {
+                    $('uoption:contains(${name})').addClass("hiht")
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <p>
+        <label for="search">Search: </label>
+        <input type="search" id="search">
+    </p>
+    <input type="text" list="">
+    <datalist id="name">
+        <option>Ann Hathaway</option>
+        <option>Robert De Niro</option>
+        <option>Bruce W</option>
+        <option>Cybill Shepherd</option>
+        <option>Robert Readford</option>
+        <option>Maryl Streep</option>
+        <option>Bred Pitt</option>
+        <option>Robin Wms</option>
+        <option>Annete Bening</option>
+        <option>Robert Downey Jr.</option>
+        <option>Demi Moore</option>
+        <option>Ana </option>
+    </datalist>
+</body>
+
+</html>

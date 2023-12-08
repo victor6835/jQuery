@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="./js/jquery-3.7.1.js"></script>    
+    <script>
+        $(document).ready(function(){  // 匿名函數
+            // let theText = $('#theText').text()
+            // console.log(theText);
+
+            // $('#theText').text('Does it make sense?')
+            $('#theText').html('<p style="color:red;">Does it make sense?</p>')
+        })
+    </script>
+</head>
+<body>
+    <h1 id="theText">
+        Lorem ipsum dolor sit amet.
+    </h1>
+</body>
+</html>

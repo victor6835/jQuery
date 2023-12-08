@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <style>
+        label {
+            text-transform: capitalize;
+            width: 80px;
+            float: left;
+        }
+
+        div {
+            margin: 5px;
+        }
+    </style>
+    <script src="./js/jquery-3.7.1.js"></script>    
+    <script>
+        $(document).ready(function(){  // 匿名函數
+            // $('input[type="text"]').focus(function(){
+            //     $(this).css('background-color','yellow')
+            // })
+
+            // alert($(':text').css('backgroundColor'))
+            // alert($(':text').css('fontSize'))
+            $(':text').focus(function(){
+                // $(this).css('background-color','yellow').css('font-size','20px')
+                $(this).css({
+                    backgroundColor: 'yellow',
+                    fontSize: '20px',
+                })
+            }).blur(function(){
+                $(this).css({
+                    backgroundColor: 'white',
+                    fontSize: '13.33px',
+                })
+            })
+
+            $('input[type="email"]').focus(function(){
+                // $(this).css('background-color','yellow')
+                $(this).attr('placeholder','')
+            }).blur(function(){
+                if($(this).val() == ''){
+                    $(this).attr('placeholder','example@icloud.com')
+                }
+            })
+
+            $(':submit').click(function(){
+                $(this).val('Please wait...')
+            })
+
+            // alert($('textarea').css('font'))  // 13.3333px monospace
+
+            $('textarea').focus(function(){
+                // $(this).attr('rows',5).attr('cols',30)
+                $(this).attr({
+                    rows: 5,
+                    cols: 30,
+                }).css({
+                    backgroundColor: 'yellow',
+                    fontSize: '16px',
+                })
+            }).blur(function(){
+                $(this).attr({
+                    rows: 2,
+                    cols: 20,
+                }).css({
+                    backgroundColor: 'white',
+                    fontSize: '13.33px',
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <!-- <form> -->
+        <div>
+            <label>user: </label>
+            <input type="text">
+        </div>
+        <div>
+            <label>email: </label>
+            <input type="email" placeholder="Your email...">
+        </div>
+        <div>
+            <label>comments: </label>
+            <textarea id="talk"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="click me">
+            <input type="submit" value="click us">
+        </div>
+    <!-- </form> -->
+</body>
+</html>
