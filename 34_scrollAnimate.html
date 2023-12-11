@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		* {
+			margin: 0;
+		}
+
+		.area {
+			height: 960px;
+			display: none;
+		}
+
+		.area p {
+			font: bold 200px Calibri;
+			text-align: center;
+			line-height: 300px;
+		}
+
+		.area:nth-child(1) {
+			background-color: #606c38;
+		}
+
+		.area:nth-child(2) {
+			background-color: #283618;
+		}
+
+		.area:nth-child(3) {
+			background-color: #fefae0;
+		}
+
+		.area:nth-child(4) {
+			background-color: #dda15e;
+		}
+
+		.area:nth-child(5) {
+			background-color: #bc6c25;
+		}
+	</style>
+	<script src="js/jquery-3.7.1.js"></script>
+	<script>
+		$(function () {
+			let showHeight = 200
+
+			$('.area').css({
+				display: 'block',
+				opacity: 0,
+			})
+
+			$(window).scroll(function () {
+				$('.area').each(function () {
+					let setThis = $(this)
+					let areaTop = setThis.offset().top  // 物件和螢幕的距離
+					// console.log(areaTop);
+
+					if ($(window).scrollTop() >= (areaTop + showHeight) - $(window).height()) {
+						setThis.stop().animate({
+							opacity: 1,
+						}, 800)
+					} else {
+						setThis.stop().animate({
+							opacity: 0,
+						}, 800)
+					}
+
+				})
+			})
+		})	
+	</script>
+</head>
+
+<body>
+	<div class="area">
+		<p>1</p>
+	</div>
+	<div class="area">
+		<p>2</p>
+	</div>
+	<div class="area">
+		<p>3</p>
+	</div>
+	<div class="area">
+		<p>4</p>
+	</div>
+	<div class="area">
+		<p>5</p>
+	</div>
+</body>
+
+</html>

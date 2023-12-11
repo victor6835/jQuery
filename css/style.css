@@ -42,3 +42,12 @@
     position: absolute;
     left: -130px;
 }
+/*24.*/
+#inCenter{
+    width: 200px;
+    height: 200px;
+    background-color: #eee;
+
+    position: absolute;
+
+}
